@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Layout Generator</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="ui-overlay">
+        <h1>2D to 3D Layout Generator</h1>
+        <div class="controls">
+          <input type="file" id="floorPlanInput" accept=".dxf,.dwg" />
+          <button id="generateBtn">Generate 3D Layout</button>
+        </div>
+        <div id="status">Ready</div>
+      </div>
+
+      <div id="sidebar">
+        <h3>Annotations</h3>
+        <ul id="annotation-list"></ul>
+        <button id="reset-camera-btn" class="reset-btn">Reset View</button>
+        <p class="sidebar-hint">Click on objects to annotate</p>
+      </div>
+
+      <div id="three-container"></div>
+    </div>
+
+    <!-- Annotation Modal -->
+    <div id="annotation-modal" class="hidden">
+      <div class="modal-content">
+        <h3>Edit Annotation</h3>
+        <textarea id="edit-text" placeholder="Enter annotation text..."></textarea>
+        <div class="modal-actions">
+          <button id="save-btn">Save</button>
+          <button id="delete-btn" class="danger">Delete</button>
+          <button id="close-btn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

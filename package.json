@@ -1,0 +1,22 @@
+{
+  "name": "sda-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.9",
+    "dxf-parser": "^1.1.2",
+    "three": "^0.182.0"
+  },
+  "devDependencies": {
+    "@types/dat.gui": "^0.7.13",
+    "@types/three": "^0.182.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  }
+}

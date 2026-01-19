@@ -1,0 +1,245 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+#ui-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(40, 40, 40, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  width: 300px;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin: 0 0 20px 0;
+  color: #00d2ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="file"] {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+button {
+  background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+#three-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* SIDEBAR STYLES */
+#sidebar {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: rgba(40, 40, 40, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  width: 280px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+#sidebar h3 {
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  color: #00d2ff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#annotation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.sidebar-item {
+  background: rgba(0, 210, 255, 0.1);
+  border-left: 3px solid #00d2ff;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+}
+
+.sidebar-item:hover {
+  background: rgba(0, 210, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.sidebar-item span {
+  display: block;
+  color: #fff;
+}
+
+.sidebar-hint {
+  font-size: 0.75rem;
+  color: #888;
+  margin: 0;
+  font-style: italic;
+}
+
+.reset-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  margin-top: 15px;
+  padding: 10px !important;
+  font-size: 0.9rem;
+}
+
+/* MODAL STYLES */
+.hidden {
+  display: none !important;
+}
+
+#annotation-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #282828;
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  border: 1px solid #444;
+  color: white;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  color: #00d2ff;
+}
+
+#edit-text {
+  width: 100%;
+  height: 100px;
+  margin: 10px 0;
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+#edit-text:focus {
+  outline: none;
+  border-color: #00d2ff;
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.modal-actions button {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.danger {
+  background: linear-gradient(135deg, #f87171 0%, #dc2626 100%) !important;
+}
+
+.danger:hover {
+  box-shadow: 0 4px 15px rgba(248, 113, 113, 0.4) !important;
+}
+
+/* Scrollbar styling for sidebar */
+#sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 210, 255, 0.3);
+  border-radius: 3px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 210, 255, 0.5);
+}
